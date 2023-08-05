@@ -3,7 +3,8 @@ import './App.css';
 import {Header} from './Header';
 import { useState, useEffect } from 'react';
 import { ColorPicker } from './Form';
-import { UserData } from './UserApi'
+import { UserData } from './UserApi';
+import { MyUserData } from './MyUser';
 
 function App(props) {
   const [emotion, setEmotion] = useState("Happy");
@@ -33,6 +34,13 @@ function App(props) {
       
       <div>
         <UserData />
+      </div>
+
+      <div>
+        <MyUserData
+          name="tarun"
+          location="Sydney"
+         />
       </div>
       
     </>
