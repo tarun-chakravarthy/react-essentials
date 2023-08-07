@@ -7,10 +7,13 @@ export function MyUserData(props) {
         <>
             <div className='container'>
                 <h1>
-                    {props.name}
+                    { props.name }
                 </h1>
                 <p>
-                   location: {props.location}
+                    EG: { props.elevationGain }
+                </p>
+                <p>
+                    { props.status }
                 </p>
             </div>
         </>

@@ -35,13 +35,6 @@ function App(props) {
       <div>
         <UserData />
       </div>
-
-      <div>
-        <MyUserData
-          name="tarun"
-          location="Sydney"
-         />
-      </div>
       
     </>
   );
