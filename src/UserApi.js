@@ -25,7 +25,7 @@ export function UserData() {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`http://snowtooth.moonhighway.com/`, opts)
+        fetch(`https://snowtooth.moonhighway.com/`, opts)
         .then((response) => response.json())
         .then(useData)
         .then(() => setLoading(false))
