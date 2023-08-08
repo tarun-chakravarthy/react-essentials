@@ -4,7 +4,6 @@ import {Header} from './Header';
 import { useState, useEffect } from 'react';
 import { ColorPicker } from './Form';
 import { UserData } from './UserApi';
-import { MyUserData } from './MyUser';
 
 function App(props) {
   const [emotion, setEmotion] = useState("Happy");
@@ -12,7 +11,7 @@ function App(props) {
     if (emotion === "Happy") {
      setEmotion("Happier");
     } else {
-     setEmotion("Happiest")
+     setEmotion("Happiest");
     }
   }
   useEffect(() => {
@@ -20,19 +19,23 @@ function App(props) {
   }, [emotion])
   return (
     <>
-      <div className='App'>
-        <Header name={"Mr.T"} profession="Frontend Developer"/>
-        <p>
-          Current Mood is {emotion} to {props.library}
-        </p>
-        <button onClick={changeMood}>Change Mood</button>
-      </div>
+      <main className='container'>
+        <section className='row'>
+        <div className='App col-12'>
+          <Header name={"Mr.Dev"} profession="Dev's World"/>
+          <p className='greenText'>
+            Always be {emotion}! 
+          </p>
+          <button onClick={changeMood} className='btn btn-primary' >Change Mood</button>
+        </div>
+        </section>
+      </main>
       
-      <div>
+      <div className='container'>
         <ColorPicker />
       </div>
       
-      <div>
+      <div className='container'>
         <UserData />
       </div>
       
