@@ -24,13 +24,13 @@ export function ColorPicker () {
 
     return (
         <>
-        <form onSubmit={submit} className="align-center">
+        <form onSubmit={submit} className="align-center w-100">
             <input 
             {...text}
-            placeholder="Color title .." type="text" />
+            placeholder="Enter text..." type="text" className="form-control mx-5" />
             
-            <button>
-                Add Color
+            <button className="btn btn-warning w-100">
+                Alert Text
             </button>
         </form>
         </>

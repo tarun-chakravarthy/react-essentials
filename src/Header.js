@@ -5,7 +5,7 @@ export function Header(props) {
     return (
         <header>
             <h1>Hello {props.name}, Welcome to {props.profession}!</h1>
-            <input type="checkbox" value={checked} onChange={() => setChecked((checked) => !checked)}/>
+            <input className="mx-2" type="checkbox" value={checked} onChange={() => setChecked((checked) => !checked)}/>
             <label>
                 {checked ? 'Checked' : 'Please Check inn!'}
             </label>
