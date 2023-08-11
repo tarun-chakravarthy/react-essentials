@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import { MyUserData } from './MyUser'
 
-const query = `
-    query {
-        allLifts {
-        name,
-        elevationGain,
-        status
-        }
-    }
-`;
+// const query = `
+//     query {
+//         allLifts {
+//         name,
+//         elevationGain,
+//         status
+//         }
+//     }
+// `;
 
-const opts = {
-    method: "Post",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query })
-};
+// const opts = {
+//     method: "Post",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ query })
+// };
 
 
 export function UserData() {
@@ -25,7 +25,7 @@ export function UserData() {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://snowtooth.moonhighway.com/`, opts)
+        fetch("/api/snowtooth/")
         .then((response) => response.json())
         .then(useData)
         .then(() => setLoading(false))
@@ -50,7 +50,7 @@ export function UserData() {
 
             <hr />
 
-            <pre> Show API DATA: {JSON.stringify(data, null, 2)}</pre>
+            {/* <pre> Show API DATA: {JSON.stringify(data, null, 2)}</pre> */}
         </>
     )
 }
