@@ -40,7 +40,7 @@ export function UserData() {
         <>
             <div>
                 <h3>
-                    With external API fetch
+                    With an external API fetch
                 </h3>
                 {
                     data.data.allLifts.map((lifts) => (
