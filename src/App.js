@@ -4,7 +4,6 @@ import {Header} from './Header';
 import { useState, useEffect } from 'react';
 import { ColorPicker } from './Form';
 import { UserData } from './UserApi';
-import { PracticeReact } from './PracticeChallenges'
 
 function App(props) {
   const [emotion, setEmotion] = useState("Happy");
@@ -20,9 +19,6 @@ function App(props) {
   }, [emotion])
   return (
     <>
-      <div className='container'>
-        <PracticeReact />
-      </div>
       <main className='container'>
         <section className='row'>
         <div className='App col-12'>
