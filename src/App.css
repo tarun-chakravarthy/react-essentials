@@ -28,6 +28,27 @@
   font-size: 24px;
 }
 
+.greenColor,
+.redColor,
+.warningColor {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+
+.greenColor {
+  color: rgba(0, 233, 0, 0.774);
+}
+
+.redColor {
+  color: rgba(163, 0, 0, 0.856);
+}
+
+.warningColor {
+  color: rgba(255, 225, 0, 0.836);
+  animation: animate 1.5s linear infinite;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -49,5 +70,17 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes animate{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 1;
   }
 }

@@ -17,7 +17,6 @@ const opts = {
     body: JSON.stringify({ query })
 };
 
-
 export function UserData() {
     const [data, useData] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -32,6 +31,7 @@ export function UserData() {
         .catch(setError);
         console.log(data, "Data Check!")
     }, []);
+
     if (loading) return <h1>Loading...</h1>
     if(error)
         return <pre>Error: {JSON.stringify(error)}</pre>
@@ -40,19 +40,32 @@ export function UserData() {
         <>
             <div>
                 <h3>
-                    With an external API fetch
+                    Check user status
                 </h3>
-                {
-                    data.data.allLifts.map((lifts) => (
-                        <MyUserData
-                        name={lifts.name}
-                        elevationGain={lifts.elevationGain}
-                        status={lifts.status}
-                        />
-                    ))
-                }
+                <table className="table mt-5">
+                        <thead className="thead-dark">
+                            <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Elevation Gain (EG)</th>
+                            <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                data.data.allLifts.map((lifts, index) => (
+                                    <tr>
+                                    <th scope="row" key={index}>{ index + 1 }</th>
+                                    <td>{ lifts.name }</td>
+                                    <td>{ lifts.elevationGain }</td>
+                                    <td className={lifts.status === "OPEN" ? 'greenColor' : (lifts.status === "HOLD" ? 'warningColor' : 'redColor')}>{ lifts.status }</td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
             </div>
-
+            <hr />    
             <div>
                 <h3>
                     Task Pending: using internal server API call....
